@@ -1,20 +1,12 @@
-dofile("get_input.lua")
+dofile("utils.lua")
 
 Input = GetInput("day1/input.txt")
-
-local function split_numbs(line)
-	local numbs = {}
-	for i in string.gmatch(line, "%S+") do
-		table.insert(numbs, i)
-	end
-	return numbs
-end
 
 function GetLists()
 	local list1 = {}
 	local list2 = {}
 	for _, numbs in pairs(Input) do
-		local n = split_numbs(numbs)
+		local n = SplitNumbs(numbs)
 		local numb1 = n[1]
 		local numb2 = n[2]
 		table.insert(list1, numb1)
